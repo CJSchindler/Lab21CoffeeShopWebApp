@@ -27,12 +27,17 @@ public class CoffeeShopController {
 			@RequestParam("email") String email,
 			@RequestParam("phone") String phone,
 			@RequestParam("password") String password) {
+		
+		//construct a new user from the URL params
+		User user = new User();
+		user.setFirstname(firstname);
+		user.setLastname(lastname);
+		user.setEmail(email);
+		user.setPhone(phone);
+		user.setPassword(password);
+		
 		ModelAndView mav = new ModelAndView("summary");
-		mav.addObject("firstname", firstname);
-		mav.addObject("lastname", lastname);
-		mav.addObject("email", email);
-		mav.addObject("phone", phone);
-		mav.addObject("password", password);
+		mav.addObject("user", user);
 		return mav;
 	}
 	

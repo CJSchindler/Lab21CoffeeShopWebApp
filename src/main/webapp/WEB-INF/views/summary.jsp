@@ -7,10 +7,11 @@
 <title>Thank you!</title>
 </head>
 <body>
+<main class="container">
 	<p>
-	Hello ${ firstname }
+	Hello ${ user.firstname }
 	</p>
 	<a href = "/register">Back</button>
-
+</main>
 </body>
 </html>
