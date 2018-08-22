@@ -37,6 +37,10 @@
 					<td>${item.description}</td>
 					<td>${item.quantity}</td>
 					<td>${item.price }</td>
+					<td>
+						<a href="/items/${ item.id }/update" class="btn btn-light btn-sm">Edit</a>
+						<a href="/items/${ item.id }/delete" class="btn btn-light btn-sm">Delete</a>
+					</td>
 				</tr>
 				</c:forEach>
 			</tbody>
