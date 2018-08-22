@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +21,28 @@
     <a class="btn btn-primary btn-md" href="/register" role="button">Register here</a>
   </p>
 </div>
+
+<div class="container">
+		<h1>Menu</h1>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Item</th><th>Description</th><th>Quantity</th><th>Price</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="item" items="${items}">
+				<tr>
+					<td><a href="/items/">${item.name}</a></td>
+					<td>${item.description}</td>
+					<td>${item.quantity}</td>
+					<td>${item.price }</td>
+				</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
+
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
