@@ -45,6 +45,7 @@
 				</c:forEach>
 			</tbody>
 		</table>
+		<a href="/items/add-item" class="btn btn-light btn-sm">Add</a>
 	</div>
 
 

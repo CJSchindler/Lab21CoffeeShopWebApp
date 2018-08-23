@@ -8,9 +8,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import co.grandcircus.coffeeshop.entity.Item;
@@ -51,7 +48,7 @@ public class ItemsDao {
 		em.merge(item);
 	}
 	
-	public void delete(Long id) {
+	public void delete(Integer id) {
 		// Deleting with Hibernate entity manager requires fetching a reference first.
 		Item item = em.getReference(Item.class, id); //just reference, not pulling from DB
 		em.remove(item);
