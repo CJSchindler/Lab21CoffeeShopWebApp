@@ -17,6 +17,9 @@ public class CoffeeShopController {
 	
 	@Autowired
 	private ItemsDao itemsDao;
+	
+	@Autowired
+	private UserDao userDao;
 
 	@RequestMapping("/")
 	public ModelAndView showHomePage() {
@@ -47,6 +50,7 @@ public class CoffeeShopController {
 		user.setPhone(phone);
 		user.setPassword(password);
 		
+		userDao.create(user);
 		ModelAndView mav = new ModelAndView("summary");
 		mav.addObject("user", user);
 		return mav;
