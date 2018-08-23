@@ -52,15 +52,26 @@ public class CoffeeShopController {
 		return mav;
 	}
 	
-	@RequestMapping(value="/items/add-item", method=RequestMethod.GET)
-	public ModelAndView addItem(Item item) {
-//		ItemsDao.create(item);
-		return new ModelAndView("add-item/");
+	@RequestMapping("/add-item")
+	public ModelAndView addItem() {
+		return new ModelAndView("add-item");
 	}
+	
 	
 	@RequestMapping("/items/{id}/delete")
 	public ModelAndView delete(@PathVariable("id") Integer id) {
 		itemsDao.delete(id);
+		return new ModelAndView("redirect:/");
+	}
+	
+	@RequestMapping(value="/submit-add", method=RequestMethod.POST)
+	public ModelAndView create(@RequestParam("name") String name, 
+			@RequestParam("description") String description, 
+			@RequestParam("quantity") int quantity, 
+			@RequestParam("price") float price) {
+		
+		Item item = new Item (name, description, quantity, price);
+		itemsDao.create(item);
 		return new ModelAndView("redirect:/");
 	}
 //	
