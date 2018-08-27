@@ -38,7 +38,7 @@
 					<td>${item.quantity}</td>
 					<td>${item.price }</td>
 					<td>
-						<a href="/items/${ item.id }/update" class="btn btn-light btn-sm">Edit</a>
+						<a href="/items/${ item.id }/edit-item/{id}" class="btn btn-light btn-sm">Edit</a>
 						<a href="/items/${ item.id }/delete" class="btn btn-light btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
 					</td>
 				</tr>

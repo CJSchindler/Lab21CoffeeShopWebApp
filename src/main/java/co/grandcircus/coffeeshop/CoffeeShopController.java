@@ -68,6 +68,14 @@ public class CoffeeShopController {
 		return new ModelAndView("redirect:/");
 	}
 	
+	@RequestMapping("/edit-item/{id}")
+	public ModelAndView showEditForm(@PathVariable("id") Integer id) {
+		ModelAndView mav = new ModelAndView("edit-item"); //goes to form to edit item
+		mav.addObject("item", itemsDao.findById(id));
+		mav.addObject("name", "Edit Item");
+		return mav;
+	}
+	
 	@RequestMapping(value="/submit-add", method=RequestMethod.POST)
 	public ModelAndView create(@RequestParam("name") String name, 
 			@RequestParam("description") String description, 
