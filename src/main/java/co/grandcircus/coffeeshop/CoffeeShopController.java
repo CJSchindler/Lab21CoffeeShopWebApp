@@ -78,6 +78,18 @@ public class CoffeeShopController {
 		itemsDao.create(item);
 		return new ModelAndView("redirect:/");
 	}
+	
+	@RequestMapping(value="/submit-add-user", method=RequestMethod.POST)
+	public ModelAndView createUser(@RequestParam("firstname") String firstname, 
+			@RequestParam("lastname") String lastname, 
+			@RequestParam("email") String email, 
+			@RequestParam("phone") String phone,
+			@RequestParam("password") String password) {
+		
+		User user = new User (firstname, lastname, email, phone, password);
+		userDao.create(user);
+		return new ModelAndView("redirect:/");
+	}
 //	
 //	@RequestMapping("item/{id}")
 //	public ModelAndView showItem(@PathVariable("id") Integer id) {

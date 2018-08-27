@@ -9,9 +9,9 @@
 <body>
 <main class="container">
 	<p>
-	Hello ${ user.firstname }
+	Thank you for registering, ${ user.firstname }
 	</p>
-	<a href = "/register">Back</button>
+	<a href = "/">Home</button>
 </main>
 
 

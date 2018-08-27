@@ -13,14 +13,14 @@
 <body>
 <main class="container">
 <div class="jumbotron">
-  <h1 class="display-3">Welcome to GC Coffee</h1>
+  <h1 class="display-4">Welcome to GC Coffee</h1>
   <p class="lead">All the caffeine you need to fuel your brain through Bootcamp.</p>
   <hr class="my-4">
-  <p>To get started, please register!</p>
+</div>
+
   <p class="lead">
     <a class="btn btn-primary btn-md" href="/register" role="button">Register here</a>
   </p>
-</div>
 
 <div class="container">
 		<h1>Menu</h1>
@@ -39,14 +39,15 @@
 					<td>${item.price }</td>
 					<td>
 						<a href="/items/${ item.id }/update" class="btn btn-light btn-sm">Edit</a>
-						<a href="/items/${ item.id }/delete" class="btn btn-light btn-sm">Delete</a>
+						<a href="/items/${ item.id }/delete" class="btn btn-light btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
 					</td>
 				</tr>
 				</c:forEach>
 			</tbody>
 		</table>
-		<a href="/add-item" class="btn btn-light btn-sm">Add</a>
+		<a href="/add-item" class="btn btn-medium btn-sm">Add</a>
 	</div>
+	<br><br>
 
 
 
